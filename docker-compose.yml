@@ -1,11 +1,22 @@
-services:
+﻿services:
+  mongodb:
+    image: mongo:7
+    container_name: bakery-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db
+    restart: unless-stopped
+
   bakery-web:
     build: .
     container_name: bakery-web
     ports:
       - "3000:3000"
-    volumes:
-      - ./data:/app/data
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/bake_your_cake
+    depends_on:
+      - mongodb
     healthcheck:
       test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
       interval: 15s

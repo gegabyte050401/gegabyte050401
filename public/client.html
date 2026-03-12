@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bake Your Cake | Client Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">Client Panel</div>
+    <h1>Client Monitoring</h1>
+    <p>View order activity and bakery updates in one place.</p>
+    <nav class="nav">
+      <a href="/customer">Customer Home</a>
+      <button class="primary" id="client-logout" type="button">Sign Out</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel fade">
+      <h3>Account</h3>
+      <p class="notice" id="client-account">Loading account...</p>
+    </section>
+
+    <section class="panel">
+      <h3>Recent Orders</h3>
+      <ul id="client-orders" class="list"></ul>
+    </section>
+
+    <section class="panel">
+      <h3>Bakery Highlights</h3>
+      <ul id="client-highlights" class="list"></ul>
+    </section>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

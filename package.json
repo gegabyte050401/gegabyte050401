@@ -1,10 +1,14 @@
-{
-  "name": "sweet-crumbs-bakery",
+﻿{
+  "name": "bake-your-cake",
   "version": "1.0.0",
-  "description": "Bakery website for online orders",
+  "description": "Bake Your Cake bakery website with client and admin panels",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.12.1"
   }
 }

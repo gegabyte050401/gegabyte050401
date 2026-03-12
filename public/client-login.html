@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bake Your Cake | Client Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">Client Login</div>
+    <h1>Welcome Back</h1>
+    <p>Use your name and a phone placeholder to log in or register.</p>
+  </header>
+
+  <main>
+    <section class="panel fade" style="max-width: 560px; margin: 0 auto;">
+      <h3>Client Login</h3>
+      <form id="client-login-form">
+        <input type="text" id="client-name" placeholder="Full name" required />
+        <input type="tel" id="client-phone" placeholder="Phone placeholder" required />
+        <button class="primary" type="submit">Enter Client Panel</button>
+      </form>
+      <p id="client-login-message" class="notice"></p>
+    </section>
+  </main>
+
+  <script src="client-login.js"></script>
+</body>
+</html>

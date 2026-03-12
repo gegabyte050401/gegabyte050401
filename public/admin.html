@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bake Your Cake | Admin Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">Admin Panel</div>
+    <h1>Admin Control Room</h1>
+    <p>Manage customer data and view business analysis.</p>
+    <nav class="nav">
+      <a href="/customer">Customer Home</a>
+      <button class="primary" id="admin-logout" type="button">Sign Out</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel fade">
+      <h3>Business Snapshot</h3>
+      <p class="notice" id="overview">Loading totals...</p>
+    </section>
+
+    <section class="panel">
+      <h3>Recent Orders</h3>
+      <table class="table" id="orders-table">
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Customer</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Placed</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h3>Customer Records</h3>
+      <table class="table" id="users-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Placeholder</th>
+            <th>Registered</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
