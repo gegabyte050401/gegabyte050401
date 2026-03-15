@@ -237,3 +237,109 @@ button.primary {
     grid-template-columns: 1fr;
   }
 }
+
+.top-nav {
+  position: absolute;
+  top: 1.6rem;
+  right: 2.5rem;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 2;
+}
+.top-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(44, 31, 24, 0.1);
+}
+.top-nav a:hover {
+  background: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.cart {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(44, 31, 24, 0.08);
+}
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border-bottom: 1px dashed rgba(44, 31, 24, 0.15);
+  padding-bottom: 0.4rem;
+}
+
+.emoji {
+  font-size: 2rem;
+}
+
+.add-btn,
+.qty button,
+.cart button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.qty button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 8px;
+}
+
+button[disabled],
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.recent-orders li {
+  display: block;
+  border: 1px solid rgba(44, 31, 24, 0.1);
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem;
+  background: #fffefb;
+}
+
+.muted {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .top-nav {
+    position: static;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
