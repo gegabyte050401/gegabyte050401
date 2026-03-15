@@ -22,7 +22,6 @@ const productSchema = new mongoose.Schema({
   category: { type: String, required: true },
   description: { type: String, default: '' },
   image: { type: String, default: '' }
-});
 
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -307,7 +306,6 @@ app.get('/api/orders/client', requireRole('client'), async (req, res) => {
 
 app.get('/customer', (_req, res) => {
   res.redirect('/');
-});
 });
 
 app.get('/client', (_req, res) => {
