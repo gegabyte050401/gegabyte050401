@@ -306,7 +306,8 @@ app.get('/api/orders/client', requireRole('client'), async (req, res) => {
 });
 
 app.get('/customer', (_req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'customer.html'));
+  res.redirect('/');
+});
 });
 
 app.get('/client', (_req, res) => {
@@ -341,6 +342,7 @@ mongoose
     console.error('MongoDB connection error:', error.message);
     process.exit(1);
   });
+
 
 
 
