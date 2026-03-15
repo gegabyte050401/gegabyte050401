@@ -6,7 +6,12 @@ const recentOrdersEl = document.getElementById('recent-orders');
 const form = document.getElementById('order-form');
 const submitBtn = form.querySelector('button[type="submit"]');
 
+const INR = 'INR ';
 const cart = new Map();
+
+function formatINR(value) {
+  return `${INR}${Number(value).toFixed(2)}`;
+}
 
 function getClientToken() {
   return localStorage.getItem('byc_client_token');
@@ -56,12 +61,12 @@ function renderCart() {
 
   for (const item of cart.values()) {
     const li = document.createElement('li');
-    li.innerHTML = `<span>${item.name} x ${item.quantity}</span><span>$${(item.price * item.quantity).toFixed(2)}</span>`;
+    li.innerHTML = `<span>${item.name} x ${item.quantity}</span><span>${formatINR(item.price * item.quantity)}</span>`;
     cartEl.appendChild(li);
     total += item.price * item.quantity;
   }
 
-  totalEl.textContent = `$${total.toFixed(2)}`;
+  totalEl.textContent = formatINR(total);
 }
 
 function changeQuantity(product, delta) {
@@ -83,14 +88,15 @@ async function loadProducts() {
 
   productsEl.innerHTML = '';
   for (const p of products) {
+    const imageUrl = p.image || `/images/${p.id}.svg`;
     const card = document.createElement('article');
     card.className = 'card';
     card.innerHTML = `
-      <div class="emoji">${p.image || '??'}</div>
+      <img class="product-image" src="${imageUrl}" alt="${p.name}" loading="lazy" />
       <h3>${p.name}</h3>
       <p>${p.category}</p>
-      <p><strong>$${p.price.toFixed(2)}</strong></p>
-      <button class="add-btn">Add to cart</button>
+      <p><strong>${formatINR(p.price)}</strong></p>
+      <button class="add-btn" type="button">Add to cart</button>
       <div class="qty">
         <button class="minus" type="button">-</button>
         <span>Adjust</span>
@@ -132,7 +138,8 @@ async function loadRecentOrders() {
   orders.slice(0, 5).forEach((order) => {
     const li = document.createElement('li');
     const created = new Date(order.createdAt).toLocaleString();
-    li.innerHTML = `<strong>${order.id || order._id}</strong> - $${Number(order.total).toFixed(2)}<br /><span class="muted">${created}</span>`;
+    const orderId = order.id || order._id;
+    li.innerHTML = `<strong>${orderId}</strong> - ${formatINR(order.total)}<br /><span class="muted">${created}</span>`;
     recentOrdersEl.appendChild(li);
   });
 }
@@ -176,7 +183,8 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
-  messageEl.textContent = `Order placed: ${data.order.id || data.order._id}`;
+  const orderId = data.order?.id || data.order?._id || 'unknown';
+  messageEl.textContent = `Order placed: ${orderId}`;
   form.reset();
   cart.clear();
   renderCart();

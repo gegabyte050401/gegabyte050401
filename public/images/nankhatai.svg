@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="18" fill="#f6e1c9"/>
+  <rect x="55" y="60" width="130" height="45" rx="12" fill="#e1b68a"/>
+  <rect x="60" y="55" width="120" height="30" rx="10" fill="#f1d2b2"/>
+  <text x="120" y="140" text-anchor="middle" font-family="Verdana" font-size="14" fill="#5b463a">Nankhatai</text>
+</svg>

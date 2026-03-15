@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="18" fill="#ffe9d2"/>
+  <rect x="50" y="70" width="140" height="40" rx="10" fill="#e8c08f"/>
+  <rect x="60" y="62" width="120" height="28" rx="10" fill="#f3d4af"/>
+  <text x="120" y="140" text-anchor="middle" font-family="Verdana" font-size="14" fill="#5b463a">Khari</text>
+</svg>

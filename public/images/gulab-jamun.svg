@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="18" fill="#ffe6d8"/>
+  <circle cx="120" cy="80" r="46" fill="#c2663a"/>
+  <circle cx="120" cy="80" r="34" fill="#dd8a5a"/>
+  <text x="120" y="140" text-anchor="middle" font-family="Verdana" font-size="14" fill="#5b463a">Gulab Jamun</text>
+</svg>

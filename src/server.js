@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const crypto = require('crypto');
@@ -20,7 +20,8 @@ const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
   category: { type: String, required: true },
-  description: { type: String, default: '' }
+  description: { type: String, default: '' },
+  image: { type: String, default: '' }
 });
 
 const userSchema = new mongoose.Schema({
@@ -57,49 +58,56 @@ const seedProducts = [
     name: 'Burger Buns (6)',
     price: 120,
     category: 'Breads',
-    description: 'Soft, golden buns for burgers and sliders.'
+    description: 'Soft, golden buns for burgers and sliders.',
+    image: '/images/burger-buns.svg'
   },
   {
     code: 'flat-bread',
     name: 'Flat Bread',
     price: 60,
     category: 'Breads',
-    description: 'Light, fluffy flat bread perfect for wraps.'
+    description: 'Light, fluffy flat bread perfect for wraps.',
+    image: '/images/flat-bread.svg'
   },
   {
     code: 'cream-puffs',
     name: 'Cream Puffs (4)',
     price: 180,
     category: 'Desserts',
-    description: 'Choux pastry filled with vanilla cream.'
+    description: 'Choux pastry filled with vanilla cream.',
+    image: '/images/cream-puffs.svg'
   },
   {
     code: 'gulab-jamun',
     name: 'Gulab Jamun (8)',
     price: 220,
     category: 'Indian Delicacies',
-    description: 'Milk-solid dumplings soaked in rose syrup.'
+    description: 'Milk-solid dumplings soaked in rose syrup.',
+    image: '/images/gulab-jamun.svg'
   },
   {
     code: 'jalebi',
     name: 'Jalebi (250g)',
     price: 200,
     category: 'Indian Delicacies',
-    description: 'Crispy spirals dipped in saffron syrup.'
+    description: 'Crispy spirals dipped in saffron syrup.',
+    image: '/images/jalebi.svg'
   },
   {
     code: 'nankhatai',
     name: 'Nankhatai (6)',
     price: 160,
     category: 'Indian Delicacies',
-    description: 'Traditional shortbread cookies with cardamom.'
+    description: 'Traditional shortbread cookies with cardamom.',
+    image: '/images/nankhatai.svg'
   },
   {
     code: 'khari',
     name: 'Khari (200g)',
     price: 140,
     category: 'Indian Delicacies',
-    description: 'Flaky, buttery puff biscuits.'
+    description: 'Flaky, buttery puff biscuits.',
+    image: '/images/khari.svg'
   }
 ];
 
@@ -167,7 +175,8 @@ app.get('/api/products', async (_req, res) => {
         name: product.name,
         price: product.price,
         category: product.category,
-        description: product.description
+        description: product.description,
+        image: product.image || '/images/' + product.code + '.svg'
       }))
     );
   } catch (error) {
@@ -332,3 +341,10 @@ mongoose
     console.error('MongoDB connection error:', error.message);
     process.exit(1);
   });
+
+
+
+
+
+
+

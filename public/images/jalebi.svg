@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="18" fill="#ffe3bf"/>
+  <path d="M60 90c20-30 60-40 90-20 20 14 25 40 5 54-24 16-58 10-95-34z" fill="#f2a93c"/>
+  <path d="M80 95c18-22 44-26 62-14 12 8 14 22 2 30-16 12-36 8-64-16z" fill="#f8c36d"/>
+  <text x="120" y="140" text-anchor="middle" font-family="Verdana" font-size="14" fill="#5b463a">Jalebi</text>
+</svg>
